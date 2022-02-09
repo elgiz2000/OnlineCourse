@@ -1,0 +1,14 @@
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\bin\Debug\net6.0\OnlineCourse.Data.deps.json
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\bin\Debug\net6.0\OnlineCourse.Data.runtimeconfig.json
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\bin\Debug\net6.0\OnlineCourse.Data.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\bin\Debug\net6.0\ref\OnlineCourse.Data.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\bin\Debug\net6.0\OnlineCourse.Data.pdb
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\OnlineCourse.Data.csproj.AssemblyReference.cache
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\OnlineCourse.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\OnlineCourse.Data.AssemblyInfoInputs.cache
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\OnlineCourse.Data.AssemblyInfo.cs
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\OnlineCourse.Data.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\OnlineCourse.Data.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\ref\OnlineCourse.Data.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\OnlineCourse.Data.pdb
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.Data\obj\Debug\net6.0\OnlineCourse.Data.genruntimeconfig.cache

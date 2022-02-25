@@ -736,6 +736,7 @@
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.2",
+      "Npgsql >= 6.0.3",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.3"
     ]
   },
@@ -745,9 +746,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Data.csproj",
-      "projectName": "OnlineCourse.Data",
-      "projectPath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Data.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Entities.csproj",
+      "projectName": "OnlineCourse.Entities",
+      "projectPath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Entities.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\obj\\",
       "projectStyle": "PackageReference",
@@ -787,6 +788,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.2, )"
+          },
+          "Npgsql": {
+            "target": "Package",
+            "version": "[6.0.3, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",

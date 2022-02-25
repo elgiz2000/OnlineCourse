@@ -3,9 +3,29 @@
   "ProjectMap": {
     "c8d172b6-22ae-453f-83f1-c5bf1692ae1f": {
       "ProjectGuid": "c8d172b6-22ae-453f-83f1-c5bf1692ae1f",
-      "DisplayName": "OnlineCourse.Data",
+      "DisplayName": "OnlineCourse.Entities",
       "ColorIndex": 0
+    },
+    "8320188c-f277-44a1-b147-c4165378100e": {
+      "ProjectGuid": "8320188c-f277-44a1-b147-c4165378100e",
+      "DisplayName": "OnlineCourse.API",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "482a0673-f006-48bd-bd92-5a32f57e814a": {
+      "ProjectGuid": "482a0673-f006-48bd-bd92-5a32f57e814a",
+      "DisplayName": "OnlineCourse.CRUD",
+      "ColorIndex": 2
+    },
+    "1da8c9c3-0b9b-4501-9318-a4ab646ef32a": {
+      "ProjectGuid": "1da8c9c3-0b9b-4501-9318-a4ab646ef32a",
+      "DisplayName": "OnlineCourse.DataAccess",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 4
 }

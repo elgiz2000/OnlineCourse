@@ -8,9 +8,12 @@
     ".NETCoreApp,Version=v6.0": {
       "OnlineCourse.API/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.2",
+          "Npgsql": "6.0.3",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.3",
-          "OnlineCourse.Data": "1.0.0",
+          "OnlineCourse.CRUD": "1.0.0",
+          "OnlineCourse.Entities": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -216,13 +219,25 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
-      "OnlineCourse.Data/1.0.0": {
+      "OnlineCourse.CRUD/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.2",
+          "Npgsql": "6.0.3",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.3",
+          "OnlineCourse.Entities": "1.0.0"
+        },
+        "runtime": {
+          "OnlineCourse.CRUD.dll": {}
+        }
+      },
+      "OnlineCourse.Entities/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.2",
+          "Npgsql": "6.0.3",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.3"
         },
         "runtime": {
-          "OnlineCourse.Data.dll": {}
+          "OnlineCourse.Entities.dll": {}
         }
       }
     }
@@ -422,7 +437,12 @@
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
-    "OnlineCourse.Data/1.0.0": {
+    "OnlineCourse.CRUD/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OnlineCourse.Entities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

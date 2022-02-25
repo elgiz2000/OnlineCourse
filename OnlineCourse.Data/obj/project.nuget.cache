@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jIu0Wec4iDvSdDkeYSeyt+ZySMdFdbSv1g2yAqNtKNxjtkhq0UUELU9An8t8hXXuZqhaanlxhRKUia0vxu4seA==",
+  "dgSpecHash": "xmwAPXbbEHArYNRKuSwGiWqoqdMB+A82uvAXTVpPmvcf/nEGyRp6sbjtxjt/cFwEr+e9y0TekNtLJDLyfOl3OQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Data.csproj",
+  "projectFilePath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.2\\microsoft.entityframeworkcore.6.0.2.nupkg.sha512",

@@ -352,18 +352,35 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "OnlineCourse.Data/1.0.0": {
+      "OnlineCourse.CRUD/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.2",
+          "Npgsql": "6.0.3",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.3",
+          "OnlineCourse.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OnlineCourse.CRUD.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineCourse.CRUD.dll": {}
+        }
+      },
+      "OnlineCourse.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.2",
+          "Npgsql": "6.0.3",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.3"
         },
         "compile": {
-          "bin/placeholder/OnlineCourse.Data.dll": {}
+          "bin/placeholder/OnlineCourse.Entities.dll": {}
         },
         "runtime": {
-          "bin/placeholder/OnlineCourse.Data.dll": {}
+          "bin/placeholder/OnlineCourse.Entities.dll": {}
         }
       }
     }
@@ -941,17 +958,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "OnlineCourse.Data/1.0.0": {
+    "OnlineCourse.CRUD/1.0.0": {
       "type": "project",
-      "path": "../OnlineCourse.Data/OnlineCourse.Data.csproj",
-      "msbuildProject": "../OnlineCourse.Data/OnlineCourse.Data.csproj"
+      "path": "../OnlineCourse.CRUD/OnlineCourse.CRUD.csproj",
+      "msbuildProject": "../OnlineCourse.CRUD/OnlineCourse.CRUD.csproj"
+    },
+    "OnlineCourse.Entities/1.0.0": {
+      "type": "project",
+      "path": "../OnlineCourse.Data/OnlineCourse.Entities.csproj",
+      "msbuildProject": "../OnlineCourse.Data/OnlineCourse.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Microsoft.EntityFrameworkCore >= 6.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.2",
+      "Npgsql >= 6.0.3",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.3",
-      "OnlineCourse.Data >= 1.0.0",
+      "OnlineCourse.CRUD >= 1.0.0",
+      "OnlineCourse.Entities >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -982,8 +1007,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Data.csproj": {
-              "projectPath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Data.csproj"
+            "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.CRUD\\OnlineCourse.CRUD.csproj": {
+              "projectPath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.CRUD\\OnlineCourse.CRUD.csproj"
+            },
+            "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Entities.csproj": {
+              "projectPath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.Data\\OnlineCourse.Entities.csproj"
             }
           }
         }
@@ -998,11 +1026,19 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.2, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.2, )"
+          },
+          "Npgsql": {
+            "target": "Package",
+            "version": "[6.0.3, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",

@@ -18,8 +18,6 @@ C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\Npgsql
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.Data.dll
-C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.Data.pdb
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\obj\Debug\net6.0\OnlineCourse.API.csproj.AssemblyReference.cache
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\obj\Debug\net6.0\OnlineCourse.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\obj\Debug\net6.0\OnlineCourse.API.AssemblyInfoInputs.cache
@@ -35,3 +33,7 @@ C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\obj\Debug\net6.0\Online
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\obj\Debug\net6.0\ref\OnlineCourse.API.dll
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\obj\Debug\net6.0\OnlineCourse.API.pdb
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\obj\Debug\net6.0\OnlineCourse.API.genruntimeconfig.cache
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.Entities.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.Entities.pdb
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.CRUD.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.CRUD.pdb

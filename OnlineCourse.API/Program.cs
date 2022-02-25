@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using OnlineCourse.CRUD.Repositories;
 using OnlineCourse.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,9 +10,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<PostgreSqlDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("OnlineCourse.Data")));
+builder.Services.AddDbContext<PostgreSqlDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("OnlineCourse.Entities")));
 #pragma warning disable CS8603 // Possible null reference return.
 builder.Services.AddScoped<DbContext>(provider => provider.GetService<PostgreSqlDbContext>());
+
+builder.Services.AddScoped<StudentRepository>();
+builder.Services.AddScoped<TeacherRepository>();
+builder.Services.AddScoped<DepartmentRepository>();
+builder.Services.AddScoped<CourseRepository>();
 #pragma warning restore CS8603 // Possible null reference return.
 var app = builder.Build();
 

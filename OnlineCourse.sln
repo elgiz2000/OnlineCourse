@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCourse.Data", "OnlineCourse.Data\OnlineCourse.Data.csproj", "{C8D172B6-22AE-453F-83F1-C5BF1692AE1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCourse.Entities", "OnlineCourse.Data\OnlineCourse.Entities.csproj", "{C8D172B6-22AE-453F-83F1-C5BF1692AE1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCourse.API", "OnlineCourse.API\OnlineCourse.API.csproj", "{8320188C-F277-44A1-B147-C4165378100E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCourse.API", "OnlineCourse.API\OnlineCourse.API.csproj", "{8320188C-F277-44A1-B147-C4165378100E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCourse.CRUD", "OnlineCourse.CRUD\OnlineCourse.CRUD.csproj", "{482A0673-F006-48BD-BD92-5A32F57E814A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8320188C-F277-44A1-B147-C4165378100E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8320188C-F277-44A1-B147-C4165378100E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8320188C-F277-44A1-B147-C4165378100E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482A0673-F006-48BD-BD92-5A32F57E814A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482A0673-F006-48BD-BD92-5A32F57E814A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482A0673-F006-48BD-BD92-5A32F57E814A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482A0673-F006-48BD-BD92-5A32F57E814A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

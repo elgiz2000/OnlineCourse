@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using OnlineCourse.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +12,7 @@ namespace OnlineCourse.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Teacher> builder)
         {
-            builder.Property(s => s.Name).HasMaxLength(15);
+            builder.Property(s => s.Name).IsRequired();
         }
     }
 }

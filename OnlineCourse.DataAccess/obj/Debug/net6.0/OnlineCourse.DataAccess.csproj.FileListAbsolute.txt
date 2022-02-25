@@ -1,0 +1,14 @@
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\bin\Debug\net6.0\OnlineCourse.DataAccess.deps.json
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\bin\Debug\net6.0\OnlineCourse.DataAccess.runtimeconfig.json
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\bin\Debug\net6.0\OnlineCourse.DataAccess.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\bin\Debug\net6.0\ref\OnlineCourse.DataAccess.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\bin\Debug\net6.0\OnlineCourse.DataAccess.pdb
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\OnlineCourse.DataAccess.csproj.AssemblyReference.cache
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\OnlineCourse.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\OnlineCourse.DataAccess.AssemblyInfoInputs.cache
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\OnlineCourse.DataAccess.AssemblyInfo.cs
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\OnlineCourse.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\OnlineCourse.DataAccess.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\ref\OnlineCourse.DataAccess.dll
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\OnlineCourse.DataAccess.pdb
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.DataAccess\obj\Debug\net6.0\OnlineCourse.DataAccess.genruntimeconfig.cache

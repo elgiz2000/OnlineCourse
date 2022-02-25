@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineCourse.Data.Entities
+namespace OnlineCourse.Entities.Dtos
 {
-    public abstract class BaseEntity
+    public class StudentDto
     {
-        public int Id { get; set; }
         public string? Name { get; set; }
     }
 }

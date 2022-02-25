@@ -1,0 +1,36 @@
+/* database name "test". */
+CREATE TABLE Teachers (
+    Id serial,
+    Salary int,
+    Name varchar(255),
+    Email varchar(255),
+	 PRIMARY KEY (Id)
+);
+
+CREATE TABLE Students (
+    Id serial,
+    Name varchar(255),
+	PRIMARY KEY (Id)
+);
+CREATE TABLE Departments (
+    Id  serial,
+    Name varchar(255),
+	PRIMARY KEY (Id)
+);
+CREATE TABLE Courses (
+    Id serial,
+    Name varchar(255),
+    Price int,
+	TeacherId int NOT NULL,
+	DepartmentId int NOT NULL,
+	PRIMARY KEY (Id),
+	FOREIGN KEY (TeacherId) REFERENCES Teachers(Id) ON DELETE CASCADE,
+	FOREIGN KEY (DepartmentId) REFERENCES Departments(Id) ON DELETE CASCADE
+);
+CREATE TABLE CoursesStudents (
+  CourseId serial NOT NULL,
+  StudentId serial NOT NULL,
+  PRIMARY KEY (CourseId, StudentId ),
+  FOREIGN KEY (CourseId) REFERENCES Courses(Id) ON UPDATE CASCADE,
+  FOREIGN KEY (StudentId ) REFERENCES Students(Id) ON UPDATE CASCADE
+);

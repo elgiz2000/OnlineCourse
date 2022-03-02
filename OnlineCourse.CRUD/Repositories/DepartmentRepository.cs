@@ -37,7 +37,8 @@ namespace OnlineCourse.CRUD.Repositories
             Department dpt = new();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Select * from departments where id=" + id + "";
+            cmd.CommandText = "Select * from departments where id=@id";
+            cmd.Parameters.AddWithValue("id", id);
             NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -54,7 +55,8 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Delete from departments where id=" + id + "";
+            cmd.CommandText = "Delete from departments where id=@id";
+            cmd.Parameters.AddWithValue("id", id);
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -64,10 +66,10 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = String.Format("insert into departments(name) VALUES('{0}')", department.Name);
+            cmd.CommandText = "Insert into departments(name) VALUES(@name)";
+            cmd.Parameters.AddWithValue("name", department.Name);
             cmd.ExecuteNonQuery();
             con.Close();
-
         }
 
         public void UpdateDepartment(Department department)
@@ -75,7 +77,9 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = String.Format("UPDATE departments SET name = '{0}' WHERE id = '{1}'", department.Name, department.Id);
+            cmd.CommandText = "UPDATE departments SET name = @name WHERE id = @id";
+            cmd.Parameters.AddWithValue("name", department.Name);
+            cmd.Parameters.AddWithValue("id", department.Id);
             cmd.ExecuteNonQuery();
             con.Close();
         }

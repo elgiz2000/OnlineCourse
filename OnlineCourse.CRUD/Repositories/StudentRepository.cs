@@ -37,7 +37,8 @@ namespace OnlineCourse.CRUD.Repositories
             Student student = new ();
             NpgsqlCommand cmd = new ();
             cmd.Connection = con;
-            cmd.CommandText= "Select * from students where id=" + id + "";
+            cmd.CommandText = "Select * from students where id=@id";
+            cmd.Parameters.AddWithValue("id", id);
             NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -54,7 +55,8 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd=new ();
             cmd.Connection=con;
-            cmd.CommandText = "Delete from students where id=" + id + "";
+            cmd.CommandText = "Delete from students where id=@id";
+            cmd.Parameters.AddWithValue("id", id);
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -64,7 +66,8 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText=String.Format("insert into students(name) VALUES('{0}')",student.Name);
+            cmd.CommandText = "Insert into students(name) VALUES(@name)";
+            cmd.Parameters.AddWithValue("name", student.Name);
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -74,7 +77,9 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = String.Format("UPDATE students SET name = '{0}' WHERE id = '{1}'", student.Name, student.Id);
+            cmd.CommandText = "UPDATE students SET name = @name WHERE id = @id";
+            cmd.Parameters.AddWithValue("name", student.Name);
+            cmd.Parameters.AddWithValue("id", student.Id);
             cmd.ExecuteNonQuery();
             con.Close();
         }

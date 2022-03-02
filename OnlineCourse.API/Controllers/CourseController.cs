@@ -85,9 +85,9 @@ namespace OnlineCourse.API.Controllers
             {
                 Id = id,
                 Name = dto.Name,
-                Price= dto.Price,
-                TeacherId=dto.TeacherId,
-                DepartmentId=dto.DepartmentId,
+                Price = dto.Price,
+                TeacherId = dto.TeacherId,
+                DepartmentId = dto.DepartmentId,
             };
             try
             {

@@ -39,7 +39,8 @@ namespace OnlineCourse.CRUD.Repositories
             Teacher teacher = new();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Select * from teachers where id=" + id + "";
+            cmd.CommandText = "Select * from teachers where id=@id";
+            cmd.Parameters.AddWithValue("id", id);
             NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -58,7 +59,8 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Delete from teachers where id=" + id + "";
+            cmd.CommandText = "Delete from teachers where id=@id";
+            cmd.Parameters.AddWithValue("id", id);
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -68,7 +70,10 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = String.Format("insert into teachers (salary,name,email) VALUES('{0}','{1}','{2}')", teacher.Salary,teacher.Name,teacher.Email);
+            cmd.CommandText = "Insert into teachers(name,salary,email) VALUES(@name,@salary,@email)";
+            cmd.Parameters.AddWithValue("name", teacher.Name);
+            cmd.Parameters.AddWithValue("name", teacher.Salary);
+            cmd.Parameters.AddWithValue("name", teacher.Email);
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -79,7 +84,11 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = String.Format("UPDATE teachers SET name = '{0}',salary="+teacher.Salary+",email='{1}' WHERE id = '{2}'", teacher.Name,teacher.Email,teacher.Id);
+            cmd.CommandText = "UPDATE teachers SET name = @name,salary=@salary,email=@email WHERE id = @id";
+            cmd.Parameters.AddWithValue("name", teacher.Name);
+            cmd.Parameters.AddWithValue("id", teacher.Id);
+            cmd.Parameters.AddWithValue("salary", teacher.Salary);
+            cmd.Parameters.AddWithValue("email", teacher.Email);
             cmd.ExecuteNonQuery();
             con.Close();
         }

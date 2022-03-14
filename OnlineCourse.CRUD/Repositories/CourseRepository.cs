@@ -19,7 +19,7 @@ namespace OnlineCourse.CRUD.Repositories
             List<CourseGetDto> courses = new();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Select * from courses inner join departments on courses.departmentid=departments.id";
+            cmd.CommandText = "Select * from course inner join department on course.department_id=department.id";
             NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -40,7 +40,7 @@ namespace OnlineCourse.CRUD.Repositories
             CourseGetDto crs = new();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Select * from courses inner join departments on courses.departmentid=departments.id where courses.id=@id";
+            cmd.CommandText = "Select * from course inner join department on course.department_id=department.id where course.id=@id";
             cmd.Parameters.AddWithValue("id", id);
             NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -60,7 +60,7 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Delete from courses where id=@id";
+            cmd.CommandText = "Delete from course where id=@id";
             cmd.Parameters.AddWithValue("id", id);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -71,11 +71,11 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Insert into courses(name,price,teacherid,departmentid) VALUES(@name,@price,@teacherid,@departmentid)";
+            cmd.CommandText = "Insert into course(name,price,teacher_id,department_id) VALUES(@name,@price,@teacher_id,@department_id)";
             cmd.Parameters.AddWithValue("price", course.Price);
-            cmd.Parameters.AddWithValue("name", course.Name);
-            cmd.Parameters.AddWithValue("teacherid", course.TeacherId);
-            cmd.Parameters.AddWithValue("departmentid", course.DepartmentId);
+            if (course.Name != null) cmd.Parameters.AddWithValue("name", course.Name);
+            cmd.Parameters.AddWithValue("teacher_id", course.TeacherId);
+            cmd.Parameters.AddWithValue("department_id", course.DepartmentId);
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -87,12 +87,12 @@ namespace OnlineCourse.CRUD.Repositories
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
             //cmd.Parameters
-            cmd.CommandText ="UPDATE courses SET name = @name,price=@price,teacherid=@teacherid,departmentid=@departmentid WHERE id = @id";
-            cmd.Parameters.AddWithValue("name", course.Name);
+            cmd.CommandText = "UPDATE course SET name = @name,price=@price,teacher_id=@teacher_id,department_id=@department_id WHERE id = @id";
+            if (course.Name != null) cmd.Parameters.AddWithValue("name", course.Name);
             cmd.Parameters.AddWithValue("price", course.Price);
             cmd.Parameters.AddWithValue("id", course.Id);
-            cmd.Parameters.AddWithValue("teacherid",course.TeacherId);
-            cmd.Parameters.AddWithValue("departmentid",course.DepartmentId);
+            cmd.Parameters.AddWithValue("teacher_id", course.TeacherId);
+            cmd.Parameters.AddWithValue("department_id", course.DepartmentId);
             cmd.ExecuteNonQuery();
             con.Close();
         }

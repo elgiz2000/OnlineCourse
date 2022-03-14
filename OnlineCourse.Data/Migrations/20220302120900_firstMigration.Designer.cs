@@ -11,7 +11,7 @@ using OnlineCourse.Data;
 namespace OnlineCourse.Entities.Migrations
 {
     [DbContext(typeof(PostgreSqlDbContext))]
-    [Migration("20220225090719_firstMigration")]
+    [Migration("20220302120900_firstMigration")]
     partial class firstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -141,21 +141,17 @@ namespace OnlineCourse.Entities.Migrations
 
             modelBuilder.Entity("OnlineCourse.Data.Course", b =>
                 {
-                    b.HasOne("OnlineCourse.Data.Department", "Department")
+                    b.HasOne("OnlineCourse.Data.Department", null)
                         .WithMany("Courses")
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("OnlineCourse.Data.Teacher", "Teacher")
+                    b.HasOne("OnlineCourse.Data.Teacher", null)
                         .WithMany("Courses")
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Department");
-
-                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("OnlineCourse.Data.Department", b =>

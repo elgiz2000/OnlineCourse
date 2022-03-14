@@ -18,6 +18,7 @@ builder.Services.AddScoped<StudentRepository>();
 builder.Services.AddScoped<TeacherRepository>();
 builder.Services.AddScoped<DepartmentRepository>();
 builder.Services.AddScoped<CourseRepository>();
+builder.Services.AddScoped<CourseStudentRepository>();
 #pragma warning restore CS8603 // Possible null reference return.
 var app = builder.Build();
 

@@ -2,6 +2,8 @@
 using OnlineCourse.CRUD.Repositories;
 using OnlineCourse.Data;
 using OnlineCourse.Entities.Dtos;
+using OnlineCourse.Entities.Dtos.Course;
+using OnlineCourse.Entities.Dtos.Teacher;
 
 namespace OnlineCourse.API.Controllers
 {
@@ -20,7 +22,16 @@ namespace OnlineCourse.API.Controllers
             try
             {
                 var teachers = _teacherRepository.GetTeachers();
-                return Ok(teachers);
+                var response = teachers.Select(x => new TeacherGetDto
+                {
+
+                    Id = x.Id,
+                    Name = x.Name,
+                    Salary = x.Salary,
+                    Email=x.Email,
+                    Courses = x?.Courses?.Select(x => new CourseListDto { Id = x.Id, Name = x.Name, Price = x.Price }).ToList(),
+                }).ToList();
+                return Ok(response);
             }
             catch (Exception e)
             {
@@ -35,7 +46,15 @@ namespace OnlineCourse.API.Controllers
             try
             {
                 var teacher = _teacherRepository.GetTeacherById(id);
-                return Ok(teacher);
+                var response = new TeacherGetDto
+                {
+                    Id = teacher.Id,
+                    Name = teacher.Name,
+                    Email = teacher.Email,
+                    Salary = teacher.Salary,
+                    Courses = teacher?.Courses?.Select(x => new CourseListDto { Id = x.Id, Name = x.Name, Price = x.Price }).ToList(),
+                };
+                return Ok(response);
             }
             catch (Exception e)
             {

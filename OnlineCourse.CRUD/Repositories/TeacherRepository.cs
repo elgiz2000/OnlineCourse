@@ -18,16 +18,53 @@ namespace OnlineCourse.CRUD.Repositories
             List<Teacher> teachers = new();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Select * from teachers";
+            cmd.CommandText = "Select teacher.id,teacher.salary,teacher.name,teacher.email,course.id,course.name,course.price from teacher left join course on teacher.id=course.teacher_id";
             NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Teacher teacher = new();
-                teacher.Id = Convert.ToInt32(reader.GetValue(0));
-                teacher.Salary = Convert.ToInt32(reader.GetValue(1));
-                teacher.Name = reader.GetValue(2).ToString();
-                teacher.Email = reader.GetValue(3).ToString();
-                teachers.Add(teacher);
+                var teacherId = Convert.ToInt32(reader.GetValue(0));
+                var teacherSalary = Convert.ToInt32(reader.GetValue(1));
+                var teacherName = reader.GetValue(2).ToString();
+                var teacherEmail = reader.GetValue(3).ToString();
+                var teacher = teachers.Where(p => p.Id == teacherId).FirstOrDefault();
+                if (reader.GetValue(4) == DBNull.Value)
+                {
+                    teacher = new();
+                    teacher.Id = teacherId;
+                    teacher.Name = teacherName;
+                    teacher.Salary = teacherSalary;
+                    teacher.Email = teacherEmail; ;
+                    teacher.Courses = new();
+                    teachers.Add(teacher);
+                }
+                else
+                {
+
+
+                    var courseId = Convert.ToInt32(reader.GetValue(4));
+                    var courseName = reader.GetValue(5).ToString();
+                    var coursePrice = Convert.ToInt32(reader.GetValue(6));
+
+                    if (teacher == null)
+                    {
+                        teacher = new();
+                        teacher.Id = teacherId;
+                        teacher.Name = teacherName;
+                        teacher.Salary = teacherSalary;
+                        teacher.Email = teacherEmail;
+                        Course course = new() { Id = courseId, Name = courseName, Price = coursePrice };
+                        teacher.Courses = new();
+                        teacher.Courses.Add(course);
+                        teachers.Add(teacher);
+                    }
+                    else
+                    {
+                        Course course = new() { Id = courseId, Name = courseName, Price = coursePrice };
+                        if (teacher.Courses != null) if (!teacher.Courses.Contains(course))
+                                teacher.Courses.Add(course);
+                    }
+                }
+
             }
             reader.Close();
             con.Close();
@@ -39,15 +76,29 @@ namespace OnlineCourse.CRUD.Repositories
             Teacher teacher = new();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Select * from teachers where id=@id";
+            cmd.CommandText = "Select teacher.id,teacher.salary,teacher.name,teacher.email,course.id,course.name,course.price from teacher left join course on teacher.id=course.teacher_id where teacher.id=@id";
             cmd.Parameters.AddWithValue("id", id);
             NpgsqlDataReader reader = cmd.ExecuteReader();
+            teacher.Courses = new();
             while (reader.Read())
             {
                 teacher.Id = Convert.ToInt32(reader.GetValue(0));
                 teacher.Salary = Convert.ToInt32(reader.GetValue(1));
                 teacher.Name = reader.GetValue(2).ToString();
                 teacher.Email = reader.GetValue(3).ToString();
+                if (reader.GetValue(4) == DBNull.Value)
+                {
+                    teacher.Courses = new();
+                }
+                else
+                {
+                    var courseId = Convert.ToInt32(reader.GetValue(4));
+                    var courseName = reader.GetValue(5).ToString();
+                    var coursePrice = Convert.ToInt32(reader.GetValue(6));
+                    Course course = new() { Id = courseId, Name = courseName, Price = coursePrice };
+                    teacher.Courses.Add(course);
+                }
+
             }
             reader.Close();
             con.Close();
@@ -59,7 +110,7 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Delete from teachers where id=@id";
+            cmd.CommandText = "Delete from teacher where id=@id";
             cmd.Parameters.AddWithValue("id", id);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -70,10 +121,10 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "Insert into teachers(name,salary,email) VALUES(@name,@salary,@email)";
-            cmd.Parameters.AddWithValue("name", teacher.Name);
-            cmd.Parameters.AddWithValue("name", teacher.Salary);
-            cmd.Parameters.AddWithValue("name", teacher.Email);
+            cmd.CommandText = "Insert into teacher(name,salary,email) VALUES(@name,@salary,@email)";
+            if (teacher.Name != null) cmd.Parameters.AddWithValue("name", teacher.Name);
+            cmd.Parameters.AddWithValue("salary", teacher.Salary);
+            if (teacher.Email != null) cmd.Parameters.AddWithValue("email", teacher.Email);
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -84,11 +135,11 @@ namespace OnlineCourse.CRUD.Repositories
             con.Open();
             NpgsqlCommand cmd = new();
             cmd.Connection = con;
-            cmd.CommandText = "UPDATE teachers SET name = @name,salary=@salary,email=@email WHERE id = @id";
-            cmd.Parameters.AddWithValue("name", teacher.Name);
+            cmd.CommandText = "UPDATE teacher SET name = @name,salary=@salary,email=@email WHERE id = @id";
+            if (teacher.Name != null) cmd.Parameters.AddWithValue("name", teacher.Name);
             cmd.Parameters.AddWithValue("id", teacher.Id);
             cmd.Parameters.AddWithValue("salary", teacher.Salary);
-            cmd.Parameters.AddWithValue("email", teacher.Email);
+            if (teacher.Email != null) cmd.Parameters.AddWithValue("email", teacher.Email);
             cmd.ExecuteNonQuery();
             con.Close();
         }

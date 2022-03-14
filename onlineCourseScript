@@ -1,5 +1,5 @@
 /* database name "test". */
-CREATE TABLE Teachers (
+CREATE TABLE Teacher (
     Id serial,
     Salary int,
     Name varchar(255),
@@ -7,30 +7,30 @@ CREATE TABLE Teachers (
 	 PRIMARY KEY (Id)
 );
 
-CREATE TABLE Students (
+CREATE TABLE Student (
     Id serial,
     Name varchar(255),
 	PRIMARY KEY (Id)
 );
-CREATE TABLE Departments (
+CREATE TABLE Department (
     Id  serial,
     Name varchar(255),
 	PRIMARY KEY (Id)
 );
-CREATE TABLE Courses (
+CREATE TABLE Course (
     Id serial,
     Name varchar(255),
     Price int,
-	TeacherId int NOT NULL,
-	DepartmentId int NOT NULL,
+	Teacher_Id int NOT NULL,
+	Department_Id int NOT NULL,
 	PRIMARY KEY (Id),
-	FOREIGN KEY (TeacherId) REFERENCES Teachers(Id) ON DELETE CASCADE,
-	FOREIGN KEY (DepartmentId) REFERENCES Departments(Id) ON DELETE CASCADE
+	FOREIGN KEY (Teacher_Id) REFERENCES Teacher(Id) ON DELETE CASCADE,
+	FOREIGN KEY (Department_Id) REFERENCES Department(Id) ON DELETE CASCADE
 );
-CREATE TABLE CoursesStudents (
-  CourseId serial NOT NULL,
-  StudentId serial NOT NULL,
-  PRIMARY KEY (CourseId, StudentId ),
-  FOREIGN KEY (CourseId) REFERENCES Courses(Id) ON UPDATE CASCADE,
-  FOREIGN KEY (StudentId ) REFERENCES Students(Id) ON UPDATE CASCADE
+CREATE TABLE Course_Student (
+  Course_Id serial NOT NULL,
+  Student_Id serial NOT NULL,
+  PRIMARY KEY (Course_Id, Student_Id ),
+  FOREIGN KEY (Course_Id) REFERENCES Course(Id) ON UPDATE CASCADE,
+  FOREIGN KEY (Student_Id ) REFERENCES Student(Id) ON UPDATE CASCADE
 );

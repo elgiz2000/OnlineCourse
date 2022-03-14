@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "u7kz+C8wAwBc2+5kdxTUQnbgf4S2kC6A1OaAdgIrdHhvpy9pajxYSs2/XPcDRzx3zaWn0dp+K/KhWFfhX++XBA==",
+  "dgSpecHash": "xihPPFUhX1MR668ERhHUGeKGpEC6xoUoCWfO8+NlRkW1DR5IqS8GrgXd9sa0Dbuzqge+WQkJnaU0UEz0W2Kc2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Documents\\C#\\OnlineCourse\\OnlineCourse.CRUD\\OnlineCourse.CRUD.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.2\\microsoft.entityframeworkcore.6.0.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.2\\microsoft.entityframeworkcore.abstractions.6.0.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.2\\microsoft.entityframeworkcore.analyzers.6.0.2.nupkg.sha512",

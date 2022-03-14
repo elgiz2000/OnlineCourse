@@ -37,3 +37,4 @@ C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\Online
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.Entities.pdb
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.CRUD.dll
 C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\OnlineCourse.CRUD.pdb
+C:\Users\user\Documents\C#\OnlineCourse\OnlineCourse.API\bin\Debug\net6.0\AutoMapper.dll

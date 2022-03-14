@@ -2,6 +2,8 @@
 using OnlineCourse.CRUD.Repositories;
 using OnlineCourse.Data;
 using OnlineCourse.Entities.Dtos;
+using OnlineCourse.Entities.Dtos.Course;
+using OnlineCourse.Entities.Dtos.Department;
 
 namespace OnlineCourse.API.Controllers
 {
@@ -17,12 +19,19 @@ namespace OnlineCourse.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllStudents()
+        public IActionResult GetAllDepartments()
         {
             try
             {
                 var departments = _departmentRepository.GetDepartments();
-                return Ok(departments);
+                var response = departments.Select(x => new DepartmentGetDto
+                {
+
+                    Id = x.Id,
+                    Name = x.Name,
+                    Courses = x?.Courses?.Select(x => new CourseListDto { Id = x.Id, Name = x.Name, Price = x.Price }).ToList(),
+                }).ToList();
+                return Ok(response);
             }
             catch (Exception e)
             {
@@ -37,7 +46,14 @@ namespace OnlineCourse.API.Controllers
             try
             {
                 var student = _departmentRepository.GetDepartmentById(id);
-                return Ok(student);
+                var response = new DepartmentGetDto
+                {
+
+                    Id = student.Id,
+                    Name = student.Name,
+                    Courses = student?.Courses?.Select(x => new CourseListDto { Id = x.Id, Name = x.Name, Price = x.Price }).ToList(),
+                };
+                return Ok(response);
             }
             catch (Exception e)
             {
